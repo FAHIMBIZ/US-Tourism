@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Tourist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap">
+        <link rel="stylesheet" href="style6.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="progress" aria-hidden="true"></div>
+        <div class="wrap">
+            <a class="brand" href="#Home">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="#F4C95D">
+                    <path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7.3L12 17.8 5.7 21.5l1.7-7.3L2 9.5l7.1-.6z" />
+                </svg>
+                American Tourist
+            </a>
+            <div class="links">
+                <a href="#Home">Home</a><a href="#History">History</a><a href="#Attractions">Attractions</a><a
+                    href="#Visit">Visit</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="Home">
+        <div class="slides" id="slides" aria-hidden="true"></div>
+        <div class="wrap">
+            <p class="eyebrow">Your guide to the USA</p>
+            <h1>Welcome to the United States of America</h1>
+            <p class="lead">Six places that define an American journey, from the bright lights of New York to the golden
+                coast of California.</p>
+            <div class="btns">
+                <a class="btn gold" href="#Destinations">Explore destinations</a>
+                <a class="btn ghost" href="#Visit">Visiting information</a>
+            </div>
+            <div class="now">
+                <div class="cap" id="cap" aria-live="polite"></div>
+                <div class="picker" id="picker"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="Destinations">
+        <div class="wrap">
+            <div class="rv">
+                <p class="eyebrow">Destinations</p>
+                <h2>Where will you go first?</h2>
+            </div>
+            <div class="grid" id="places"></div>
+        </div>
+    </section>
+
+    <section id="History">
+        <div class="wrap">
+            <div class="rv">
+                <p class="eyebrow">History</p>
+                <h2>The stories behind the skylines</h2>
+            </div>
+            <div class="hwrap">
+                <div class="tabs" id="tabs"></div>
+                <div class="story" id="story"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Attractions">
+        <div class="wrap">
+            <div class="rv">
+                <p class="eyebrow">Famous attractions</p>
+                <h2>Don’t leave without seeing</h2>
+            </div>
+            <div class="grid" id="attractions"></div>
+        </div>
+    </section>
+
+    <section id="Visit">
+        <div class="wrap">
+            <div class="rv">
+                <p class="eyebrow">Visiting information</p>
+                <h2>Plan your visit</h2>
+            </div>
+            <div class="vgrid" id="visit"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap rz">
+            <q>“May the unforgettable beauty of America inspire your next great adventure!”</q>
+            <p>Thank you for exploring the United States of America.</p>
+        </div>
+    </footer>
+
+    <script>
+        const places = [
+            {
+                id: 'nyc', name: 'New York City', nick: 'The City That Never Sleeps', img: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/1280px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg',
+                blurb: 'Amazing skyscrapers, bright lights, luxury shopping and world-famous attractions. An unforgettable experience for every visitor.',
+                hist: ['Originally inhabited by Indigenous people, especially the Lenape.', 'In 1624, Dutch settlers established a settlement called New Amsterdam.', 'In 1664, the British took control of the city and renamed it New York.', 'In 1789, New York City became the first capital of the United States under the Constitution.', 'During the 19th century, many immigrants arrived in search of better opportunities.', 'The Statue of Liberty was gifted by France and officially opened in 1886.', 'In the 20th century, New York became a major centre for business, fashion, finance and entertainment.', 'Today it is one of the world’s most famous cities, known as “The City That Never Sleeps.”'],
+                attr: ['Times Square', 'Central Park', 'Empire State Building', 'Brooklyn Bridge', 'Rockefeller Center'],
+                visit: ['Located in the state of New York.', 'One of the most famous cities in the USA.', 'Known as “The City That Never Sleeps.”', 'Famous for tall buildings, shopping and entertainment.', 'An important centre for business and fashion.', 'Attracts millions of tourists every year.']
+            },
+            {
+                id: 'ts', name: 'Times Square', nick: 'The Crossroads of the World', img: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/1_times_square_night_2013.jpg/1280px-1_times_square_night_2013.jpg',
+                blurb: 'Giant digital screens, colourful lights, theatres and busy streets in the heart of Manhattan. Especially beautiful at night.',
+                hist: ['Times Square was originally called Longacre Square.', 'In 1904, it was renamed Times Square after The New York Times newspaper moved there.', 'The famous New Year’s Eve celebration began in 1904, and the ball-drop tradition started in 1907.', 'Today it is famous for its bright digital screens, theatres, shopping and entertainment.'],
+                attr: ['Broadway', 'One Times Square', 'Red Steps', 'Madame Tussauds', 'Duffy Square'],
+                visit: ['Located in Manhattan, New York City.', 'Famous for bright digital screens and colourful lights.', 'One of the busiest tourist places in America.', 'Known for shopping, restaurants and theatres.', 'Famous for New Year’s Eve celebrations.', 'Called the heart of New York entertainment.']
+            },
+            {
+                id: 'sol', name: 'Statue of Liberty', nick: 'Symbol of freedom and hope', img: 'https://images.openai.com/static-rsc-4/IJuvErzkufiqUKN8J_etXY7N-n9v84OFu0vmrzTr_97ndNnwktbO_vBSmaRBaUxdIDW0zdZbUh7tGb6WVsG44jFHSMwxtzVj8_UEFoN7qElgmN412wjDCT-W8cNtUKMVZGynbZSquMvShmVPHPgYjyMThv5oDbCmXdRoHiROD6vbp2zx1jXg3mypCdfXWzdC?purpose=fullsize',
+                blurb: 'On Liberty Island in New York Harbor, a symbol of freedom, hope, peace and friendship, and one of America’s most popular attractions.',
+                hist: ['Gifted to the United States by France in 1886 as a symbol of friendship and freedom.', 'Designed by French sculptor Frédéric Auguste Bartholdi.', 'The statue represents liberty, peace and democracy.', 'It welcomed millions of immigrants arriving in America by ship.', 'Today it is one of the most famous landmarks in the world, a symbol of freedom, hope and opportunity.'],
+                attr: ['Liberty Island', 'Ellis Island', 'Statue Crown', 'Statue Pedestal', 'Liberty Museum'],
+                visit: ['Located in New York Harbor.', 'Gifted by France to the USA in 1886.', 'A symbol of freedom and hope.', 'Designed by Frédéric Auguste Bartholdi.', 'Welcomes visitors from around the world.', 'One of America’s most famous landmarks.']
+            },
+            {
+                id: 'chi', name: 'Chicago', nick: 'The Windy City', img: 'https://images.openai.com/static-rsc-4/MZ48WdhLjfhQ0qTO-hTWN1gC59dmnT8EjNV4F7cAHbVZFr-O-mGOzJuioUeqobaXwv8cEHIjyUy6uCA5iS-9SWNzHuFyPM1pYMEuPPRDZiIp90S2ihDE3P4nSgGpeqI9ZTy9XoUNEAe-YipN_Z_vPGL-HaZhqYW9XanJcqzi38sa9spkLmTf1kchIVLntotT?purpose=fullsize',
+                blurb: 'Magnificent skyscrapers, stunning architecture, parks and museums beside Lake Michigan, with delicious deep-dish pizza.',
+                hist: ['Founded in 1833 as a small settlement near Lake Michigan.', 'It quickly grew into an important centre for trade, transport and business.', 'In 1871, a major fire destroyed much of the city, known as the Great Chicago Fire.', 'The city was rebuilt with modern buildings and skyscrapers.', 'Today, the “Windy City” is famous for its architecture, museums, parks and Lake Michigan.'],
+                attr: ['Millennium Park', 'Willis Tower', 'Navy Pier', 'Chicago Riverwalk', 'Shedd Aquarium'],
+                visit: ['Located in the state of Illinois.', 'One of the largest cities in America.', 'Known as the “Windy City.”', 'Famous for modern buildings and architecture.', 'Located beside Lake Michigan.', 'Popular for museums, parks and shopping.']
+            },
+            {
+                id: 'mia', name: 'Miami', nick: 'The Magic City', img: 'https://images.openai.com/static-rsc-4/_5IHYbcIuKTRJyNJpSul8ypJkHcnz83saPuefseqx5qu9z4_7TcCS_p8hCIdrw8uYt67ylX9GmcOxV1sDR6Tue4Jjw0XYgODS9KpxRRz83XhiApuc8wqkSfAMj3h57aahcnNXSjrxj1RyQAylMnTTpWdkR_wNqLY2muxqw0yHmnMtphfz5xVUJ6g5NequI9W?purpose=fullsize',
+                blurb: 'Beautiful beaches, crystal-clear water, colourful buildings, luxury hotels and exciting nightlife along the Atlantic Ocean.',
+                hist: ['Officially founded in 1896 in Florida.', 'Before that, the area was home to Indigenous communities, including the Tequesta people.', 'The arrival of the railway helped Miami grow into an important city.', 'During the 20th century, it developed into a popular destination for tourism and business.', 'Known as the “Magic City” because of its rapid growth and development.'],
+                attr: ['South Beach', 'Miami Beach', 'Ocean Drive', 'Wynwood Walls', 'Little Havana'],
+                visit: ['Located in the state of Florida.', 'Famous for beautiful beaches and blue water.', 'Known as the “Magic City.”', 'Warm weather throughout most of the year.', 'Popular for nightlife, music and shopping.', 'Attracts tourists from all over the world.']
+            },
+            {
+                id: 'cal', name: 'California', nick: 'The Golden State', img: 'https://images.openai.com/static-rsc-4/2ufxjK_1yryQqJUafZp2GLiph8_tjAt0FYUAHYxxj1cv62NNIJQJsXw0lKiQoIfXXaTLWjXtSy_A3VeBjxLkLZC5nrcYTmV9nNpfS1I6E7Tw68P1RVuHAfBp7z4sxLsr5lQGnxX1oeMVTVnkmXOSnuWMuQFtjgOHOpeFV0tkPHqOFWTR_cs1PW9YUr9kMdG4?purpose=fullsize',
+                blurb: 'Beaches, Hollywood, mountains and national parks on the Pacific coast. A dream destination for nature and adventure lovers.',
+                hist: ['Originally home to many Native American communities.', 'In 1848, gold was discovered at Sutter’s Mill, starting the famous California Gold Rush.', 'Thousands of people came to California hoping to find gold.', 'In 1850, California became the 31st state of the United States.', 'Later it became famous for Hollywood, technology, beautiful beaches and tourism, and the “Golden State” nickname.'],
+                attr: ['Golden Gate Bridge', 'Hollywood Sign', 'Disneyland', 'Yosemite National Park', 'Santa Monica Pier', 'Lake Tahoe'],
+                visit: ['A state in the western USA.', 'Known as the “Golden State.”', 'Famous for Hollywood and the film industry.', 'Beautiful beaches, mountains and forests.', 'A major centre for technology and business.', 'One of the most popular tourist destinations in America.']
+            }
+        ];
+        const $ = id => document.getElementById(id);
+        $('places').innerHTML = places.map(p => `<article class="card rv"><div class="ph"><img src="${p.img}" alt="${p.name}" loading="lazy"></div><div class="body"><p class="nick">${p.nick}</p><h3>${p.name}</h3><p class="t">${p.blurb}</p></div></article>`).join('');
+        $('attractions').innerHTML = places.map(p => `<div class="acard rz"><h3>${p.name}</h3><ul>${p.attr.map(a => `<li>${a}</li>`).join('')}</ul></div>`).join('');
+        $('visit').innerHTML = places.map(p => `<div class="rz"><h3>${p.name}</h3><ol>${p.visit.map(a => `<li>${a}</li>`).join('')}</ol></div>`).join('');
+        function show(id) {
+            const p = places.find(x => x.id === id);
+            $('tabs').innerHTML = places.map(x => `<button class="${x.id === id ? 'on' : ''}" data-id="${x.id}">${x.name}</button>`).join('');
+            $('story').innerHTML = `<h3>${p.name}</h3>` + p.hist.map((t, i) => `<div class="row rl"><b>${String(i + 1).padStart(2, '0')}</b><p>${t}</p></div>`).join('');
+        }
+        $('tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) show(b.dataset.id) });
+        show('nyc');
+
+        /* hero slideshow */
+        const slidesEl = $('slides'), picker = $('picker'), cap = $('cap');
+        slidesEl.innerHTML = places.map(p => `<div class="slide" style="background-image:url('${p.img}')"></div>`).join('');
+        picker.innerHTML = places.map((p, i) => `<button class="pick" data-i="${i}" aria-label="Show ${p.name}" style="background-image:url('${p.img}')"></button>`).join('');
+        let cur = 0, timer;
+        function go(i) {
+            cur = i;
+            [...slidesEl.children].forEach((s, k) => s.classList.toggle('on', k === i));
+            [...picker.children].forEach((b, k) => b.classList.toggle('on', k === i));
+            cap.innerHTML = `<b>${String(i + 1).padStart(2, '0')} / ${String(places.length).padStart(2, '0')}</b>${places[i].name} · ${places[i].nick}`;
+        }
+        function play() { clearInterval(timer); timer = setInterval(() => go((cur + 1) % places.length), 5500); }
+        picker.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { go(+b.dataset.i); play(); } });
+        go(0); play();
+    </script>
+</body>
+
+</html>
